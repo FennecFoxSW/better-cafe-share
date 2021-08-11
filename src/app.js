@@ -6,7 +6,7 @@ const { Liquid } = require('liquidjs');
 
 const log = pino({ name: 'Server', prettyPrint: true });
 const app = express();
-const port = process.env.PORT ?? 5000;
+const port = process.env.PORT ?? 3000;
 const engine = new Liquid();
 let browser = null;
 
