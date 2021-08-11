@@ -7,7 +7,7 @@ const { Liquid } = require('liquidjs');
 const log = pino({ name: 'Server', prettyPrint: true });
 const app = express();
 const port = process.env.PORT ?? 3000;
-const engine = new Liquid();
+const engine = new Liquid({ extname: '.liquid' });
 let browser = null;
 
 const parseCafePost = require('./parseCafePost');

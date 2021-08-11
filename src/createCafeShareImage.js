@@ -5,6 +5,7 @@ const { Liquid } = require('liquidjs');
 module.exports = async (browser, parsedData) => {
   const liquid = new Liquid({
     root: path.resolve(__dirname, 'templetes/'),
+    extname: '.liquid',
   });
   const renderedStr = await liquid.renderFile('index', parsedData);
   const page = await browser.newPage();
