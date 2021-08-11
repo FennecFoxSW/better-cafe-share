@@ -1,22 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
 
-<meta charset="utf-8">
-<title>{{articleSubject}}</title>
+<head>
 
-<meta name="description" content="{{articleDisplayWriteDate}} • 읽는 데 {{articleReadingTime}}분 • 👀 {{articleReadCount}} • ❤️ {{articleLikeCount}} • 💬 {{articleCommentCount}}">
-<meta name="image" content="{{imageURL}}">
+  <meta charset="utf-8">
+  <title>{{articleSubject}}</title>
 
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="{{articleSubject}}">
-<meta name="twitter:description" content="{{articleDisplayWriteDate}} • 읽는 데 {{articleReadingTime}}분 • 👀 {{articleReadCount}} • ❤️ {{articleLikeCount}} • 💬 {{articleCommentCount}}">
+  <meta name="description" content="{{articleDisplayWriteDate}} • 읽는 데 {{articleReadingTime}}분 • 👀 {{articleReadCount}} • ❤️ {{articleLikeCount}} • 💬 {{articleCommentCount}}">
+  <meta name="image" content="{{imageURL}}">
 
-<meta name="og:title" content="{{articleSubject}}">
-<meta name="og:description" content="{{articleDisplayWriteDate}} • 읽는 데 {{articleReadingTime}}분 • 👀 {{articleReadCount}} • ❤️ {{articleLikeCount}} • 💬 {{articleCommentCount}}">
-<meta name="og:image" content="{{imageURL}}">
-<meta name="og:url" content="{{redirectURL}}">
-<meta name="og:site_name" content="{{cafeName}}">
-<meta name="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{articleSubject}}">
+  <meta name="twitter:description" content="{{articleDisplayWriteDate}} • 읽는 데 {{articleReadingTime}}분 • 👀 {{articleReadCount}} • ❤️ {{articleLikeCount}} • 💬 {{articleCommentCount}}">
 
-<meta name="article:section" content="{{boardName}}">
-<meta name="article:author" content="{{authorName}}">
+  <meta name="og:title" content="{{articleSubject}}">
+  <meta name="og:description" content="{{articleDisplayWriteDate}} • 읽는 데 {{articleReadingTime}}분 • 👀 {{articleReadCount}} • ❤️ {{articleLikeCount}} • 💬 {{articleCommentCount}}">
+  <meta name="og:image" content="{{imageURL}}">
+  <meta name="og:url" content="{{redirectURL}}">
+  <meta name="og:site_name" content="{{cafeName}}">
+  <meta name="og:type" content="article">
 
-<meta http-equiv="refresh" content="0; url={{redirectURL}}">
+  <meta name="article:section" content="{{boardName}}">
+  <meta name="article:author" content="{{authorName}}">
+</head>
+
+<body>
+  <h1>Better Cafe Share</h1>
+  <a href={{redirectURL}}>"{{articleSubject}}" 글로 이동중입니다. 만약 자동으로 이동되지 않는다면 여길 눌러주세요.</a>
+  <script>
+    window.location.replace("{{redirectURL}}");
+  </script>
+</body>
+
+</html>
