@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
+  "engines": {
+    "node": ">=16.0.0"
+  },
   "scripts": {
     "dev": "nodemon --max-old-space-size=512 src/app.js",
     "dev:lagacy": "nodemon -L src/app.js",
