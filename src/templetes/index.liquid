@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <title>{{cafeName}} - {{boardName}} - {{articleSubject}} Share Image</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body style="font-family: 'Noto Sans KR', sans-serif;">
+    <header class="main" id="main" style="background-image: url({{articleThumbnailImgURL}}); background-size: cover; height: 100vh;">
+        <div class="container-fluid h-100" style="backdrop-filter: blur(10px) brightness(25%);">
+            <div class="row align-items-center h-75">
+                <div class="col text-start ms-5">
+                    <h3 class="text-white me-5">{{cafeName}} • {{boardName}}<br></h3>
+                    <h1 class="text-white me-5">{{articleSubject}}<br></h1>
+                    <p class="lead text-white-50">{{articleDisplayWriteDate}} • 읽는 데 {{articleReadingTime}}분 •
+                        👀 {{articleReadCount}} • ❤️ {{articleLikeCount}} • 💬 {{articleCommentCount}}<br>
+                    </p>
+                </div>
+            </div>
+            <div class="row align-items-center mb-5">
+                <div class="col-1 offset-0 ms-5"><img src="{{authorImageURL}}"></div>
+                <div class="col text-start text-white">
+                    <h1>{{authorName}}</h1>
+                    <p class="lead">{{authorLevel}}</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
+    <script>
+        twemoji.parse(document.body);
+    </script>
+</body>
+
+</html>
