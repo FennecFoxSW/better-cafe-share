@@ -13,6 +13,8 @@ let browser = null;
 const parseCafePost = require('./parseCafePost');
 const createCafeShareImage = require('./createCafeShareImage');
 
+const PUPPETEER_LAUNCH_ARGS = ['--no-sandbox', '--disable-setuid-sandbox'];
+
 app.engine('liquid', engine.express());
 app.set('views', path.resolve(__dirname, 'templetes/'));
 app.set('view engine', 'liquid');
@@ -28,7 +30,10 @@ async function generateShareImage(req, res, next) {
   log.info('generateShareImage');
   if (!browser || browser.process().killed) {
     log.warn('Browser closed!');
-    browser = await puppeteer.launch({ headless: true });
+    browser = await puppeteer.launch({
+      headless: true,
+      args: PUPPETEER_LAUNCH_ARGS,
+    });
   }
   const { cafeName, postID, imageIndex } = req.shareInfo;
   log.info(`Image: ${cafeName} / ${postID} / ${imageIndex}`);
@@ -76,7 +81,10 @@ app.get('/info/:cafeName/:postID', getShareInfo, async (req, res) => {
 app.listen(port, async () => {
   log.info(`Server started! Listening at ${port}`);
   if (!browser || browser.process().killed) {
-    browser = await puppeteer.launch({ headless: true });
+    browser = await puppeteer.launch({
+      headless: true,
+      args: PUPPETEER_LAUNCH_ARGS,
+    });
   }
   log.info('Browser opened!');
 });
